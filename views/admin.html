@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<style>
+		th 		{ border: solid 1px black; width: 150px; text-align: center}
+		#navbar { color: white; }
+		h1      { color: orange }
+	</style>
+</head>
+
+<body>
+
+	<div class="container" id="navbar">
+		<div class="navbar navbar-fixed-top navbar-inverse">
+		<h3><span class="fa fa-lock"></span> Xter Project Authentication</h3>
+		</div>
+	</div>
+	<br>
+	<div class="page-header text-center">
+		<h1><span class="fa fa-anchor"> ADMIN PAGE</span></h1>
+		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+	</div>
+
+	<table>
+		<tr>
+			<th>Pos.</th>
+			<th>Username</th>
+			<th>DOB</th>
+			<th>Phone</th>
+			<th>Action</th>
+		</tr>
+
+		<!-- display user in database -->
+		{% for user in users %}
+		<tr>
+			<td>{{ user.id }}</td>
+			<td>{{ user.username}}</td>
+			<td>{{ user.dob}}</td>
+			<td>{{ user.phone}}</td>
+		</tr>
+		{% endfor %}
+
+
+	</table>
+
+</body>
+
+</html>
